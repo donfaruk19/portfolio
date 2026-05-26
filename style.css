@@ -1,0 +1,43 @@
+/* style.css */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+nav {
+    background: #002d72; /* Professional Navy Blue */
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header {
+    background: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #002d72;
+}
+
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+}
+
+h2 {
+    color: #002d72;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
