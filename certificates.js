@@ -4,9 +4,7 @@ const certCards = document.querySelectorAll('.cert-card');
 
 certFilterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
         certFilterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         button.classList.add('active');
         
         const filterValue = button.getAttribute('data-cert-filter');
@@ -54,18 +52,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Navbar background on scroll
 const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
-    } else {
-        navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
-    }
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
+        } else {
+            navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+        }
+    });
+}
 
 // Intersection Observer for animations
+// ✅ FIX: threshold 0 so tall sections reveal reliably
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -73,6 +74,8 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            // Stop observing once revealed (performance + prevents flicker)
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -93,8 +96,6 @@ endorsementCards.forEach(card => {
         const width = fill.style.width;
         fill.style.width = '0';
         
-        // Trigger animation when in view
-        observer.observe(card);
         const barObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -102,7 +103,8 @@ endorsementCards.forEach(card => {
                     barObserver.unobserve(entry.target);
                 }
             });
-        });
+        }, { threshold: 0 });
+
         barObserver.observe(card);
     }
 });
@@ -114,7 +116,6 @@ window.addEventListener('scroll', () => {
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (window.scrollY >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
@@ -122,7 +123,8 @@ window.addEventListener('scroll', () => {
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.style.color = 'var(--text-main)';
-        if (link.getAttribute('href').includes(current) && current) {
+        const href = link.getAttribute('href');
+        if (href && href.includes(current) && current) {
             link.style.color = 'var(--accent)';
         }
     });

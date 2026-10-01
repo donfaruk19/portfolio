@@ -2,62 +2,62 @@
 const repositories = [
     {
         name: 'crypto-cipher',
-        description: 'Advanced CLI tool for encryption and decryption using Caesar Cipher algorithm. Demonstrates fundamental cryptographic principles and robust Python programming practices.',
+        description: 'Advanced CLI tool for encryption and decryption using Caesar Cipher algorithm.',
         language: 'Python',
         url: 'https://github.com/donfaruk19/crypto-cipher',
         stars: 12
     },
     {
         name: 'PixelFlow',
-        description: 'Image encryption tool using pixel manipulation. Implements advanced image processing techniques for secure visual data protection with multiple encryption methods.',
+        description: 'Image encryption tool using pixel manipulation. Advanced image processing techniques.',
         language: 'Python',
         url: 'https://github.com/donfaruk19/PixelFlow',
         stars: 8
     },
     {
         name: 'dsn-bct-agent',
-        description: 'Containerized LLM agent for Nigerian consumer market simulation. Analyzes market dynamics and consumer behavior.',
+        description: 'Containerized LLM agent for Nigerian consumer market simulation.',
         language: 'Python',
         url: 'https://github.com/donfaruk19/dsn-bct-agent',
         stars: 5
     },
     {
         name: 'passchecker',
-        description: 'Password complexity checker with enhanced security features. Evaluates password strength and provides recommendations.',
+        description: 'Password complexity checker with enhanced security features.',
         language: 'Python',
         url: 'https://github.com/donfaruk19/passchecker',
         stars: 7
     },
     {
         name: 'G-eye',
-        description: 'Threat map and security analysis tools. Provides visualization and analysis of security threats with comprehensive reporting capabilities.',
+        description: 'Threat map and security analysis tools. Visualization of security threats.',
         language: 'TypeScript',
         url: 'https://github.com/donfaruk19/G-eye',
         stars: 6
     },
     {
         name: 'Smart_audiobook_converter',
-        description: 'Transform book content into engaging audio format with reverse conversion capability. Accessible information in multiple forms.',
+        description: 'Transform book content into engaging audio format with reverse conversion.',
         language: 'Python',
         url: 'https://github.com/donfaruk19/Smart_audiobook_converter',
         stars: 10
     },
     {
         name: 'basic_keylogger',
-        description: 'Educational implementation of a basic keylogger for understanding cybersecurity concepts related to keystroke logging.',
+        description: 'Educational implementation of a basic keylogger for cybersecurity concepts.',
         language: 'Python',
         url: 'https://github.com/donfaruk19/basic_keylogger',
         stars: 4
     },
     {
         name: 'regcs',
-        description: 'Landing page for cybersecurity seminar registration that generates QR codes and verifies entry.',
+        description: 'Landing page for cybersecurity seminar registration with QR code verification.',
         language: 'HTML',
         url: 'https://github.com/donfaruk19/regcs',
         stars: 3
     },
     {
-        name: 'Exam_simulation',
+        name: 'Exam_similation',
         description: 'Interactive exam simulation platform with tracking and analytics.',
         language: 'JavaScript',
         url: 'https://github.com/donfaruk19/Exam_similation',
@@ -65,24 +65,46 @@ const repositories = [
     },
     {
         name: 'level3',
-        description: 'Local system chat application for peer-to-peer communication within a local network.',
+        description: 'Local system chat application for peer-to-peer communication.',
         language: 'HTML',
         url: 'https://github.com/donfaruk19/level3',
         stars: 6
     },
     {
         name: 'unspoken_love',
-        description: 'Interactive story-telling web application with an engaging narrative experience.',
+        description: 'Interactive story-telling web application.',
         language: 'HTML',
         url: 'https://github.com/donfaruk19/unspoken_love',
         stars: 2
     },
     {
         name: 'herrbirthday',
-        description: 'Special birthday celebration web application with interactive features.',
+        description: 'Special birthday celebration web application.',
         language: 'HTML',
         url: 'https://github.com/donfaruk19/herrbirthday',
         stars: 3
+    },
+    // NEW PROJECTS
+    {
+        name: 'Smart Passport Studio',
+        description: 'AI-powered passport photo processing and nominal-roll builder with automated cropping and background replacement.',
+        language: 'Python',
+        url: 'https://github.com/donfaruk19', // Update if repo is public
+        stars: 0
+    },
+    {
+        name: 'NACWS GEMS Exam Portal',
+        description: 'Secure examination and assessment portal for military training institutions.',
+        language: 'Python',
+        url: 'https://github.com/donfaruk19', // Update if repo is public
+        stars: 0
+    },
+    {
+        name: 'SYS_scan Security Scanner',
+        description: 'Windows security scanner detecting threats by behavior and patterns with automated containment.',
+        language: 'Python',
+        url: 'https://github.com/donfaruk19', // Update if repo is public
+        stars: 0
     }
 ];
 
@@ -162,7 +184,7 @@ window.addEventListener('scroll', () => {
 
 // Intersection Observer for animations
 const observerOptions = {
-    threshold: 0.1,
+    threshold: 0,
     rootMargin: '0px 0px -100px 0px'
 };
 
@@ -171,6 +193,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -189,8 +212,6 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
-        const formData = new FormData(this);
         const data = {
             name: this.querySelector('input[placeholder="Your Name"]').value,
             email: this.querySelector('input[placeholder="Your Email"]').value,
@@ -198,8 +219,7 @@ if (contactForm) {
             message: this.querySelector('textarea').value
         };
 
-        // Show success message
-        alert(`Thank you for your message, ${data.name}! I'll get back to you soon.`);
+        alert(`Thank you for your message, ${data.name}! I'll get back to you soon at donfaruk191@gmail.com.`);
         this.reset();
     });
 }
