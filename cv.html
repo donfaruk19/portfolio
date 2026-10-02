@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullahi Umar Faruk — Curriculum Vitae</title>
+<style>
+    /* ============================================ */
+    /* PRINT-OPTIMIZED CV — A4, BLACK ON WHITE      */
+    /* ============================================ */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    @page {
+        size: A4;
+        margin: 14mm 14mm;
+    }
+
+    body {
+        font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.4;
+        color: #1a1a1a;
+        background: #e8e8e8;
+        padding: 20px 0;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto 20px;
+        padding: 14mm;
+        background: #ffffff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+        border-bottom: 3px solid #0a4d2c;
+        padding-bottom: 10px;
+        margin-bottom: 14px;
+    }
+
+    h1 {
+        font-size: 22pt;
+        font-weight: 700;
+        color: #0a4d2c;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .tagline {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 6px;
+    }
+
+    .contact-line {
+        font-size: 9pt;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    .contact-line span {
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .contact-line a {
+        color: #0a4d2c;
+        text-decoration: none;
+    }
+
+    /* ---------- SECTION HEADINGS ---------- */
+    h2 {
+        font-size: 11pt;
+        font-weight: 700;
+        color: #0a4d2c;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 1.5px solid #0a4d2c;
+        padding-bottom: 3px;
+        margin-top: 14px;
+        margin-bottom: 8px;
+    }
+
+    h3 {
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-top: 8px;
+    }
+
+    .role-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+    }
+
+    .role-title {
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: #0a4d2c;
+    }
+
+    .role-period {
+        font-size: 9pt;
+        font-weight: 600;
+        color: #555;
+        white-space: nowrap;
+    }
+
+    .role-org {
+        font-size: 9.5pt;
+        font-style: italic;
+        color: #444;
+        margin-bottom: 3px;
+    }
+
+    /* ---------- BODY TEXT ---------- */
+    p {
+        margin-bottom: 5px;
+        text-align: justify;
+    }
+
+    ul {
+        margin-left: 14px;
+        margin-bottom: 5px;
+    }
+
+    li {
+        margin-bottom: 2px;
+        text-align: justify;
+    }
+
+    .summary {
+        font-size: 10pt;
+        text-align: justify;
+        margin-bottom: 8px;
+    }
+
+    /* ---------- EXPERIENCE ENTRIES ---------- */
+    .job {
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+    }
+
+    .job p {
+        font-size: 9.5pt;
+    }
+
+    .job ul li {
+        font-size: 9.5pt;
+    }
+
+    .job-tagline {
+        font-style: italic;
+        color: #555;
+        font-size: 9.5pt;
+        margin-bottom: 4px;
+    }
+
+    /* ---------- TWO COLUMN SKILLS ---------- */
+    .skill-block {
+        margin-bottom: 6px;
+        page-break-inside: avoid;
+    }
+
+    .skill-block strong {
+        color: #0a4d2c;
+        font-size: 9.5pt;
+    }
+
+    .skill-block span {
+        font-size: 9.5pt;
+    }
+
+    /* ---------- CERT GRID ---------- */
+    .cert-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px 20px;
+        font-size: 9pt;
+    }
+
+    .cert-item {
+        padding-left: 10px;
+        position: relative;
+        line-height: 1.4;
+    }
+
+    .cert-item::before {
+        content: "▪";
+        position: absolute;
+        left: 0;
+        color: #0a4d2c;
+        font-weight: bold;
+    }
+
+    /* ---------- KEY EXPERTISE LINE ---------- */
+    .key-expertise {
+        font-size: 9pt;
+        color: #0a4d2c;
+        font-weight: 600;
+        margin-top: 3px;
+        padding-top: 3px;
+        border-top: 1px dotted #ccc;
+    }
+
+    /* ---------- AWARDS ---------- */
+    .award {
+        margin-bottom: 3px;
+        font-size: 9.5pt;
+        padding-left: 12px;
+        position: relative;
+    }
+
+    .award::before {
+        content: "★";
+        position: absolute;
+        left: 0;
+        color: #0a4d2c;
+        font-size: 8pt;
+    }
+
+    .award strong {
+        color: #1a1a1a;
+    }
+
+    .award-year {
+        color: #666;
+        font-style: italic;
+    }
+
+    /* ---------- PRINT BUTTON (HIDDEN ON PRINT) ---------- */
+    .print-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #0a4d2c;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .print-btn:hover {
+        background: #0d6b3d;
+    }
+
+    /* ---------- PRINT STYLES ---------- */
+    @media print {
+        body {
+            background: #fff;
+            padding: 0;
+            font-size: 9.5pt;
+        }
+
+        .page {
+            width: 100%;
+            min-height: auto;
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .print-btn {
+            display: none;
+        }
+
+        a {
+            color: #1a1a1a !important;
+            text-decoration: none;
+        }
+
+        h2 {
+            page-break-after: avoid;
+        }
+
+        .job, .cert-item, .award, .skill-block {
+            page-break-inside: avoid;
+        }
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media screen and (max-width: 800px) {
+        .page {
+            width: 100%;
+            padding: 20px;
+        }
+        .cert-grid {
+            grid-template-columns: 1fr;
+        }
+        .role-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<div class="page">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>Abdullahi Umar Faruk</h1>
+        <div class="tagline">
+            Criminologist | Safety &amp; Security Analyst | Crime Investigator | Cybersecurity Educator (CCEP) |
+            Certified Teacher (TRCN) | Office Administrator (IC3 GS6 Master) | AI Prompt Security (CLLMSP)
+        </div>
+        <div class="contact-line">
+            <span>📞 +234 814 583 3933</span>
+            <span>✉️ <a href="mailto:donfaruk191@gmail.com">donfaruk191@gmail.com</a></span>
+            <span>🌐 <a href="https://donfaruk19.github.io/portfolio">donfaruk19.github.io/portfolio</a></span>
+            <br>
+            <span>💼 <a href="https://ng.linkedin.com/in/abdullahiumarfaruk">linkedin.com/in/abdullahiumarfaruk</a></span>
+            <span>💻 <a href="https://github.com/donfaruk19">github.com/donfaruk19</a></span>
+            <br>
+            <span>📍 Abogo Largema Military Cantonment, Biu, Borno State | AMAC, Abuja</span>
+        </div>
+    </header>
+
+    <!-- ================= PROFESSIONAL SUMMARY ================= -->
+    <h2>Professional Summary</h2>
+    <p class="summary">
+        A highly disciplined, multi-talented, and results-driven professional with <strong>11 years of active-duty service in the Nigerian Army</strong>, combining field operational experience, executive office administration, and advanced technical expertise in Cybersecurity, AI/LLM automation, and Data Analysis. Proven track record of maintaining operational integrity, safeguarding classified information, and delivering technical instruction at the Nigerian Army Cyber Warfare School (NACWS) with a <strong>95%+ student pass rate</strong>. Academically grounded in Criminology and Security Studies (BSc, GPA 3.9), offering robust strategic insights into risk mitigation, criminal investigation, intelligence analysis, and modern security challenges.
+    </p>
+
+    <!-- ================= CORE COMPETENCIES ================= -->
+    <h2>Core Competencies</h2>
+
+    <div class="skill-block">
+        <strong>Cybersecurity &amp; IT:</strong>
+        <span>Ethical Hacking, Red Teaming, OSINT, Penetration Testing, Windows &amp; Linux Administration, Python Programming, Cloud Computing, SIEM, Data Management &amp; Analysis</span>
+    </div>
+
+    <div class="skill-block">
+        <strong>Security &amp; Intelligence:</strong>
+        <span>Criminal Investigation, Counter-Terrorism Strategies, Risk Mitigation, Intelligence Analysis, Forensic Evidence Collection, Map Reading (A1), Executive Protection</span>
+    </div>
+
+    <div class="skill-block">
+        <strong>AI &amp; Automation:</strong>
+        <span>LLM Integration &amp; Prompt Engineering (CLLMSP), Computer Vision (OpenCV), AI Agent Development, Offline LLM Deployment (EagleBrain), Workflow Automation</span>
+    </div>
+
+    <div class="skill-block">
+        <strong>Administration &amp; Leadership:</strong>
+        <span>Office Administration (IC3 GS6 Master), HR &amp; Personnel Management, EDMS &amp; Document Security, Project Management, Curriculum Design, Technical Instruction, Team Leadership</span>
+    </div>
+
+    <div class="skill-block">
+        <strong>Defense &amp; Global Studies:</strong>
+        <span>DDR Management (UN Certified), Detention Management, Peace &amp; Conflict Resolution, Gender Advisory, Child Protection, Weapon Handling</span>
+    </div>
+
+    <div class="skill-block">
+        <strong>Leadership &amp; Cognitive:</strong>
+        <span>Critical Thinking, Strategic Planning, Decision Making, Effective Communication, Emotional Intelligence, Conflict Resolution, Time Management</span>
+    </div>
+
+    <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
+    <h2>Professional Experience</h2>
+
+    <!-- NACWS -->
+    <div class="job">
+        <div class="role-header">
+            <span class="role-title">Cyber Security Instructor &amp; Administrative Assistant</span>
+            <span class="role-period">Jul 2026 – To Date</span>
+        </div>
+        <div class="role-org">Nigerian Army Cyber Warfare School (NACWS), Abuja</div>
+        <p class="job-tagline">Served in a dual-capacity role at NACWS, blending advanced technical education with rigorous academy operations and administrative management.</p>
+        <ul>
+            <li><strong>Technical Instruction:</strong> Designed and delivered lectures and practical lab modules for the Basic Cybersecurity Course (BCC) and Intermediate Cybersecurity Course (IC2). Trained personnel in network security, OSINT, system administration, and basic ethical hacking.</li>
+            <li><strong>Lab Facilitation:</strong> Orchestrated simulated cyber drills and virtual labs to train students in real-time incident handling and Security Operations Center (SOC) methodologies.</li>
+            <li><strong>Administrative Coordination:</strong> Managed end-to-end student enrolment workflows, unit nominations, and performance databases.</li>
+            <li><strong>Executive Support:</strong> Directed office logistics for school leadership, drafted official military correspondence, and coordinated calendars.</li>
+            <li><strong>Event Management:</strong> Acted as a core liaison for the NACWS Annual Cybersecurity Seminar and coordinated technical study tours.</li>
+        </ul>
+        <div class="key-expertise">Key Expertise: Cyber Security Education • Information Security • Office Administration • Technical Training • Curriculum Development • Executive Support • Operations Management</div>
+    </div>
+
+    <!-- 331 Artillery -->
+    <div class="job">
+        <div class="role-header">
+            <span class="role-title">Intelligence &amp; Criminal Investigations Specialist</span>
+            <span class="role-period">Jul 2024 – Jul 2026</span>
+        </div>
+        <div class="role-org">331 Artillery Regiment, Nigerian Army, Borno State</div>
+        <p class="job-tagline">Served as a specialist in tactical intelligence, forensic investigations, and cyber defense, ensuring operational security and actionable intelligence for command staff.</p>
+        <ul>
+            <li><strong>Forensic Evidence Collection:</strong> Directed 40+ complex criminal investigations, securing physical and digital evidence from crime scenes to maintain a 100% chain-of-custody compliance record.</li>
+            <li><strong>Tactical Intelligence &amp; OSINT:</strong> Executed threat surveillance and OSINT tracking of hostile movements, delivering actionable intelligence briefs that directly mitigated operational risk for command staff.</li>
+            <li><strong>Counter-Espionage &amp; Cyber Defense:</strong> Identified and neutralized espionage activities while actively monitoring, penetration testing, and hardening unit networks against external unauthorized intrusions.</li>
+            <li><strong>Interrogations &amp; Record Optimization:</strong> Conducted professional interviews and interrogations of suspects, logging detailed investigative reports and maintaining offender profiling records with zero data handling errors.</li>
+            <li><strong>Executive Protection:</strong> Engineered close-protection operational plans for high-risk personnel, ensuring 100% mission safety across all assigned details.</li>
+        </ul>
+        <div class="key-expertise">Key Expertise: Criminal Investigation • Tactical Intelligence • OSINT • Cyber Defense • Interrogation • Executive Protection</div>
+    </div>
+
+    <!-- 32 Artillery Brigade -->
+    <div class="job">
+        <div class="role-header">
+            <span class="role-title">Administrative Assistant &amp; Garrison Specialist</span>
+            <span class="role-period">Jul 2016 – Jul 2024</span>
+        </div>
+        <div class="role-org">32 Artillery Brigade, Nigerian Army Ondo State</div>
+        <p class="job-tagline">Delivered comprehensive administrative, HR, and operational support, streamlining workflows and managing sensitive personnel data over a 8-year period.</p>
+        <ul>
+            <li><strong>Administrative Workflow Optimization:</strong> Streamlined unit HR database systems, reducing document retrieval times by 40% through standardized indexing and digital archival methods.</li>
+            <li><strong>Personnel Data Security:</strong> Managed confidential personnel archives, ensuring 100% compliance with data protection policies and military document classification rules.</li>
+            <li><strong>Tactical Qualification Advancement:</strong> Advanced through military qualifications to attain Map Reading Class 1 (A1) and completed military education courses up to A1 level, graduating in the top tier of performance evaluations.</li>
+        </ul>
+        <div class="key-expertise">Key Expertise: Office Administration • Records Management • Data Security • Tactical Qualifications • HR Systems</div>
+    </div>
+
+    <!-- ================= EDUCATION ================= -->
+    <h2>Education &amp; Academic Background</h2>
+
+    <div class="role-header">
+        <span class="role-title">BSc (Hons) Criminology &amp; Security Studies</span>
+        <span class="role-period">2017 – 2023 | GPA: 3.9</span>
+    </div>
+    <div class="role-org">National Open University of Nigeria (NOUN)</div>
+
+    <div class="role-header">
+        <span class="role-title">NCE in Geography / Economics</span>
+        <span class="role-period">2018 – 2021 | 10 Points</span>
+    </div>
+    <div class="role-org">Nigerian Army College of Education, Ilorin</div>
+
+    <div class="role-header">
+        <span class="role-title">National Diploma (ND) in Computer Science</span>
+        <span class="role-period">2014 – 2016 | Lower Credit</span>
+    </div>
+    <div class="role-org">Federal Polytechnic, Mubi</div>
+
+    <div class="role-header">
+        <span class="role-title">Executive Diploma in Human Resource Management</span>
+        <span class="role-period">2021 | Credit</span>
+    </div>
+    <div class="role-org">Dimsi College of Education, Bwari</div>
+
+    <div class="role-header">
+        <span class="role-title">National Vocational Certificate in Computer Appreciation</span>
+        <span class="role-period">2011 | NABTEB, 7 Credits</span>
+    </div>
+    <div class="role-org">Vocational Enterprise Institute, Kuje</div>
+
+    <!-- ================= CERTIFICATIONS ================= -->
+    <h2>Professional Certifications</h2>
+
+    <h3>Cybersecurity &amp; IT</h3>
+    <div class="cert-grid">
+        <div class="cert-item">IC3 Digital Literacy Master Certification (GS6)</div>
+        <div class="cert-item">Certified Cybersecurity Educator Professional (CCEP)</div>
+        <div class="cert-item">Ethical Hacking Essentials — EC-Council</div>
+        <div class="cert-item">Intermediate Cybersecurity Course — NACWS</div>
+        <div class="cert-item">Cyber Security &amp; Ethical Hacking — JIT Solutions</div>
+        <div class="cert-item">3MTT Program — Cybersecurity (NITDA)</div>
+        <div class="cert-item">Open-Source Intelligence (OSINT) — Basel Institute</div>
+        <div class="cert-item">Networking Devices &amp; Initial Configuration — Cisco</div>
+        <div class="cert-item">Proficiency in IT &amp; National Security — IADSP</div>
+        <div class="cert-item">GDPR Compliance Certificate</div>
+        <div class="cert-item">Cyber Security &amp; Counter-Terrorism Awareness</div>
+        <div class="cert-item">Introduction to Networking — Udemy</div>
+    </div>
+
+    <h3>AI &amp; Advanced Computing</h3>
+    <div class="cert-grid">
+        <div class="cert-item">CLLMSP Professional Certification (LLM Prompting)</div>
+        <div class="cert-item">Artificial Intelligence (AI) Frameworks</div>
+        <div class="cert-item">Computer Vision — NITDA / JMTI Institute</div>
+        <div class="cert-item">AI Basics — Digital Skills Nigeria</div>
+        <div class="cert-item">Responsible AI — Digital Skills Nigeria</div>
+        <div class="cert-item">Internet Search and Beyond — Digital Skills Nigeria</div>
+    </div>
+
+    <h3>Intelligence, Tactical &amp; Global Security</h3>
+    <div class="cert-grid">
+        <div class="cert-item">UN Revised Integrated DDR Standards</div>
+        <div class="cert-item">UN Military Gender Advisory Course</div>
+        <div class="cert-item">Criminal Investigation &amp; Intelligence Proficiency</div>
+        <div class="cert-item">Professional Detention Management</div>
+        <div class="cert-item">Peace &amp; Conflict Management</div>
+        <div class="cert-item">Introduction to Disaster Management &amp; Policies</div>
+        <div class="cert-item">Flood Disaster &amp; Safety Awareness</div>
+        <div class="cert-item">Children's Rights &amp; Technology (Global Campus MOOC)</div>
+        <div class="cert-item">Children Deprived of Liberty (UN Global Study)</div>
+        <div class="cert-item">Promoting &amp; Protecting Human Rights — Global Campus</div>
+    </div>
+
+    <h3>Education &amp; Professional Development</h3>
+    <div class="cert-grid">
+        <div class="cert-item">Certified Teacher Registration — TRCN</div>
+        <div class="cert-item">Functional Arabic Course — NAISET</div>
+        <div class="cert-item">EF SET English Certificate (B2 Upper Intermediate)</div>
+        <div class="cert-item">Jobberman Soft-Skills Training</div>
+        <div class="cert-item">Basic Online First Aid Course</div>
+        <div class="cert-item">Digital Skills: Social Media — Accenture</div>
+    </div>
+
+    <!-- ================= AWARDS & ACHIEVEMENTS ================= -->
+    <h2>Awards &amp; Achievements</h2>
+    <div class="award"><strong>First Position — Cyberstion Course</strong> — Collected COMD Award at NACWS. <span class="award-year">(2025)</span></div>
+    <div class="award"><strong>Cyber Warrior — NACWS</strong> — Recognized as a Cyber Warrior at the Nigerian Army Cyber Warfare School. <span class="award-year">(2025)</span></div>
+    <div class="award"><strong>Outstanding Student — Project Submission</strong> — Awarded at seminar for exceptional project work. <span class="award-year">(2025)</span></div>
+    <div class="award"><strong>Best Clerical Soldier</strong> — Recognized for outstanding administrative and clerical work. <span class="award-year">(2021)</span></div>
+    <div class="award"><strong>Best Student — Map Reading Course</strong> — Awarded Best Student for exceptional performance. <span class="award-year">(2018)</span></div>
+    <div class="award"><strong>Honor Society Membership</strong> — Inducted with all honors, benefits, and privileges. <span class="award-year">(Nov 2022)</span></div>
+    <div class="award"><strong>ASPESM Associate Membership</strong> — African Society of Professional Economists and Strategic Managers. <span class="award-year">(Mar 2021)</span></div>
+
+    <!-- ================= AI TOOLS ================= -->
+    <h2>AI Tools &amp; Technical Stack</h2>
+    <div class="skill-block">
+        <strong>Confidential / Offline AI:</strong>
+        <span>NemoMix 12B, Llama 3.2 3B (GGUF via llama.cpp), EagleBrain custom assistant — 100% offline, air-gap ready, zero data leakage for RESTRICTED work.</span>
+    </div>
+    <div class="skill-block">
+        <strong>Cybersecurity &amp; OSINT:</strong>
+        <span>Claude AI, DeepSeek, Perplexity, Grok, Meta AI (Llama)</span>
+    </div>
+    <div class="skill-block">
+        <strong>Administration &amp; Document AI:</strong>
+        <span>Claude AI, ChatGPT (GPT-4o), Kimi, Gemini, Microsoft Copilot</span>
+    </div>
+    <div class="skill-block">
+        <strong>Automation &amp; Coding:</strong>
+        <span>Claude Code, DeepSeek Coder, GitHub Copilot, Cursor AI, Replit Ghostwriter</span>
+    </div>
+    <div class="skill-block">
+        <strong>Creative &amp; Media:</strong>
+        <span>Midjourney, Stable Diffusion, Runway, ElevenLabs, Suno AI, Whisper</span>
+    </div>
+
+    <!-- ================= LANGUAGES ================= -->
+    <h2>Languages</h2>
+    <div class="skill-block">
+        <span><strong>English:</strong> Expert (Reading, Speaking, Writing) &nbsp;•&nbsp; <strong>Hausa:</strong> Native &nbsp;•&nbsp; <strong>Arabic:</strong> Basic &nbsp;•&nbsp; <strong>Latin Hausa:</strong> Fluent &nbsp;•&nbsp; <strong>Yoruba:</strong> Basic</span>
+    </div>
+
+    <!-- ================= PERSONAL ================= -->
+    <h2>Personal Profile</h2>
+    <div class="skill-block">
+        <span><strong>Date of Birth:</strong> April 07 &nbsp;•&nbsp; <strong>Gender:</strong> Male &nbsp;•&nbsp; <strong>Religion:</strong> Islam &nbsp;•&nbsp; <strong>Financial Domain:</strong> Active Practitioner in Forex Market Analysis &amp; Technical Risk Management</span>
+    </div>
+
+</div>
+
+</body>
+</html>
